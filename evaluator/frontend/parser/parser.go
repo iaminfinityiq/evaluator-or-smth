@@ -147,7 +147,7 @@ func (p *Parser) ParseUnaryExpression() runtime.RuntimeResult {
 		return runtime.Success(rt.Result)
 	}
 
-	var sign = p.At().TokenType
+	var sign = lexer.Plus
 	for signs.Contains(p.At().TokenType) {
 		var operator int = p.Eat().TokenType
 		if operator == lexer.Plus {
